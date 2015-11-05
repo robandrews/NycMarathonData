@@ -6,9 +6,10 @@ from time import sleep
 import csv
 import datetime
 
+# Split this up however you wish, to break up the data
 arr = [
-      # "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[2]",
-      # "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[3]",
+      "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[2]",
+      "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[3]",
       "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[4]",
       "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[5]",
       "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[6]",
@@ -20,19 +21,19 @@ arr = [
       "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[12]",
       "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[13]",
       "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[14]",
-      # "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[15]",
-      # "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[16]",
-      # "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[17]",
-      # "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[18]",
-      # "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[19]",
-      # "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[20]",
-      # "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[21]",
-      # "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[22]",
-      # "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[23]",
-      # "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[24]",
-      # "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[25]",
-      # "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[26]",
-      # "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[27]"
+      "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[15]",
+      "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[16]",
+      "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[17]",
+      "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[18]",
+      "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[19]",
+      "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[20]",
+      "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[21]",
+      "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[22]",
+      "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[23]",
+      "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[24]",
+      "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[25]",
+      "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[26]",
+      "/html/body/div[2]/form/table/tbody/tr[16]/td[2]/select/option[27]"
       ]
 
 
@@ -40,7 +41,7 @@ class MarathonScraper():
 
   def setUp(self):
     self.driver = webdriver.Firefox()
-    self.csv_file = open("men30-90_" + str(datetime.date.today()) + ".csv", 'w')
+    self.csv_file = open("women18-90_" + str(datetime.date.today()) + ".csv", 'w')
     self.writer = csv.writer(self.csv_file)
 
   def scrape_age_group(self):
