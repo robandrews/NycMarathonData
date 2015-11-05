@@ -44,7 +44,7 @@ n, bins, patches = plt.hist(times, num_bins, normed=1, facecolor='blue', alpha=0
 y = mlab.normpdf(bins, sm, math.sqrt(sv))
 plt.plot(bins, y, 'r--')
 plt.xlabel('Time')
-plt.ylabel('Probability')
+plt.ylabel('')
 plt.title(r'2014 NYC Marathon Times')
 
 # Tweak spacing to prevent clipping of ylabel
