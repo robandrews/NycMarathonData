@@ -30,7 +30,6 @@ print(mstats.skewtest(times))
 
 n, (smin, smax), sm, sv, ss, sk = stats.describe(times)
 
-
 print(stats.describe(times))
 
 num_bins = 50
