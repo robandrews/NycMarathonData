@@ -12,3 +12,12 @@ mean | 16,485.36 seconds (4 hr 34 min 45 seconds)
 variance | 10258147.24 seconds
 skewness | 0.740631
 kurtosis | 0.788157
+
+---------------------------------------
+###Recreate results
+
+From project directory:
+
+`python scrape_marathon.py`
+
+`python histogram.py -dir data`
