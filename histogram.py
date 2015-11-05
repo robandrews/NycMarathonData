@@ -7,15 +7,20 @@ from scipy.stats import normaltest
 from scipy.stats import mstats
 import csv
 import math
+import sys
+import glob
+import argparse
 
-# example data
-mu = 15324  # mean of distribution
-sigma = 2973  # standard deviation of distribution
-# x = mu + sigma * np.random.randn(10000)
+parser = argparse.ArgumentParser(description='Create a histogram.')
+
+parser.add_argument('--dir', default="data",
+                   help='select a directory of csv files')
+
+args = parser.parse_args()
 
 times = []
+files = glob.glob("{0}/*.csv".format(args.dir))
 
-files = ["data/men18-29_2014.csv", "data/men30-90_2014.csv", "data/women18-90_2014.csv"]
 for phile in files:
 	with open(phile, 'rb') as csvfile:
 	    reader = csv.reader(csvfile, delimiter=',')
@@ -27,15 +32,14 @@ for phile in files:
 
 print(normaltest(times))
 print(mstats.skewtest(times))
-
-n, (smin, smax), sm, sv, ss, sk = stats.describe(times)
-
 print(stats.describe(times))
 
+n, (smin, smax), sm, sv, ss, sk = stats.describe(times)
 num_bins = 50
 
 # the histogram of the data
 n, bins, patches = plt.hist(times, num_bins, normed=1, facecolor='blue', alpha=0.5)
+
 # add a 'best fit' line
 y = mlab.normpdf(bins, sm, math.sqrt(sv))
 plt.plot(bins, y, 'r--')

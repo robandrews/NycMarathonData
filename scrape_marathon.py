@@ -41,7 +41,7 @@ class MarathonScraper():
 
   def setUp(self):
     self.driver = webdriver.Firefox()
-    self.csv_file = open("women18-90_" + str(datetime.date.today()) + ".csv", 'w')
+    self.csv_file = open("data/marathon_data.csv", 'w')
     self.writer = csv.writer(self.csv_file)
 
   def scrape_age_group(self):
@@ -68,11 +68,6 @@ class MarathonScraper():
       self.scrape_age_group()
     except Exception, ex:
       print("No button found")
-
-    
-        
-
-
 
   def search_page_of_results(self, url):
     driver = self.driver
